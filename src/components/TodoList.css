@@ -1,27 +1,32 @@
 .form-container {
+    width: 600px;
+
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .overlay {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.form-box {
     background: rgba(255, 255, 255, 0.95);
     padding: 2.5rem;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     max-height: 85vh;
     overflow-y: auto;
-    backdrop-filter: blur(10px);
 }
 
 .form-box h2 {
@@ -192,6 +197,31 @@ button:active {
     background: linear-gradient(to right, #c82333, #bd2130);
 }
 
+.edit-form {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    width: 100%;
+}
+
+.edit-form input {
+    flex: 1;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+}
+
+.edit-form button {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .form-box::-webkit-scrollbar {
     width: 8px;
 }
@@ -215,7 +245,7 @@ button:active {
         padding: 15px;
     }
 
-    .form-box {
+    .overlay {
         padding: 1.5rem;
     }
 
@@ -236,6 +266,14 @@ button:active {
         width: 100%;
         text-align: center;
     }
+
+    .edit-form {
+        flex-direction: column;
+    }
+
+    .edit-form button {
+        width: 100%;
+    }
 }
 
 @keyframes fadeIn {
@@ -247,4 +285,21 @@ button:active {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-buttons button {
+    flex: 1;
+}
+
+.cancel-btn {
+    background: linear-gradient(to right, #6c757d, #5a6268);
+}
+
+.cancel-btn:hover {
+    background: linear-gradient(to right, #5a6268, #4a5258);
 } 
